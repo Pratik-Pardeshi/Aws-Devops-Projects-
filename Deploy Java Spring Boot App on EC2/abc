@@ -1,0 +1,12 @@
+3. Host a Java Spring Boot App
+What it teaches: Java, Maven, Jenkins (optional).
+
+Steps:
+
+Launch EC2, install Java and Maven.
+
+Clone your Spring Boot project (e.g., PetClinic).
+
+Build and run the JAR file.
+
+Open port 8080.
