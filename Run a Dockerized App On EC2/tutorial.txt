@@ -1,0 +1,39 @@
+Step 1: Launch EC2 Instance
+OS: Ubuntu 22.04
+
+Type: t2.micro (Free Tier)
+
+Inbound Rules:
+
+Port 22 (SSH)
+
+Port 80 (HTTP)
+
+🔹 Step 2: Connect to EC2
+bash
+Copy code
+ssh -i your-key.pem ubuntu@your-ec2-public-ip
+🔹 Step 3: Install Docker
+bash
+Copy code
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl enable docker
+sudo systemctl start docker
+Give Docker permissions (optional):
+
+bash
+Copy code
+sudo usermod -aG docker $USER
+Logout & re-login for group changes.
+
+🔹 Step 4: Run a Docker Container (e.g., NGINX)
+bash
+Copy code
+sudo docker run -d -p 80:80 nginx
+✅ You now have an NGINX server running inside a Docker container.
+
+Test it:
+http://<your-ec2-ip>
+
+
