@@ -1,0 +1,68 @@
+Full Guide: Deploy Flask App on EC2 (with Virtualenv)
+🔹 1. Launch EC2 Instance
+OS: Ubuntu 22.04 (recommended)
+
+Instance type: t2.micro (free tier)
+
+Security Group Inbound Rules:
+
+Port 22 – SSH
+
+Port 5000 – Flask app (development)
+
+(optional) Port 80 – Nginx (production)
+
+🔹 2. Connect to EC2
+bash
+Copy code
+ssh -i your-key.pem ubuntu@your-ec2-public-ip
+🔹 3. Install Required Packages
+bash
+Copy code
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3-pip python3-venv -y
+🔹 4. Set Up Your Flask App
+bash
+Copy code
+mkdir -p /var/www/html/flask-app
+cd /var/www/html/flask-app
+Create your app:
+
+bash
+Copy code
+nano app.py
+Paste:
+
+python
+Copy code
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello from Flask on EC2!"
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
+🔹 5. Create Virtual Environment
+bash
+Copy code
+python3 -m venv venv
+source venv/bin/activate
+🔹 6. Install Flask Inside Virtualenv
+bash
+Copy code
+pip install flask
+🔹 7. Run the Flask App
+bash
+Copy code
+python3 app.py
+OR run in background:
+
+bash
+Copy code
+nohup python3 app.py &
+🔹 8. Access Your App
+Go to:
+http://<your-ec2-public-ip>:5000
+✅ You should see: "Hello from Flask on EC2!"

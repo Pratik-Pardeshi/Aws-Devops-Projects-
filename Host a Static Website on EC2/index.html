@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratik Pardeshi | Portfolio</title>
+  <style>
+    :root {
+      --primary: #00e6e6;
+      --secondary: #ffdb58;
+      --dark: #121212;
+      --light: #f5f5f5;
+      --glass: rgba(255, 255, 255, 0.05);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: var(--light);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 60px auto;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--secondary);
+      font-size: 1.5rem;
+      margin-top: 30px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 5px;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      margin: 5px 5px 5px 0;
+      background-color: var(--primary);
+      color: #000;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 40px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        margin: 30px 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pratik Pardeshi</h1>
+    <p style="text-align: center;"><strong>AWS DevOps Engineer</strong></p>
+
+    <h2>Contact</h2>
+    <p>Email: pspardeshi2002@gmail.com</p>
+    <p>Phone: +91 9763168031</p>
+    <p>Location: Raver, MH, India</p>
+
+    <h2>Skills</h2>
+    <div>
+      <span class="tag">AWS</span>
+      <span class="tag">EC2</span>
+      <span class="tag">Docker</span>
+      <span class="tag">Jenkins</span>
+      <span class="tag">Kubernetes</span>
+      <span class="tag">Terraform</span>
+      <span class="tag">Ansible</span>
+      <span class="tag">GitHub Actions</span>
+    </div>
+
+    <h2>Professional Summary</h2>
+    <p>
+      AWS DevOps Engineer with 2.3+ years of experience. Strong in automation,
+      CI/CD pipelines, and cloud infrastructure using AWS services. Experienced in
+      deploying and scaling apps using Docker, Jenkins, Kubernetes, and Terraform.
+    </p>
+
+    <h2>Experience</h2>
+    <p><strong>Flynaut Saas Pvt Ltd</strong> – AWS Engineer (Dec 2024–Present)</p>
+    <ul>
+      <li>Configured and deployed scalable EC2 instances</li>
+      <li>Designed secure VPCs with subnets and security groups</li>
+      <li>Built CI/CD pipelines using Jenkins + CodeDeploy</li>
+    </ul>
+    <p><strong>Skillerio Pvt Ltd</strong> – AWS DevOps Engineer (Feb 2023–Dec 2024)</p>
+    <ul>
+      <li>Automated deployments with Jenkins pipelines</li>
+      <li>Managed RDS instances and monitoring with CloudWatch</li>
+      <li>Used Terraform and CloudFormation for IaC</li>
+    </ul>
+
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Three-Tier Architecture:</strong> EC2 + Load Balancer + RDS deployment</li>
+      <li><strong>Django App CI/CD:</strong> Automated build/deploy using Jenkins</li>
+      <li><strong>Java Pet Clinic:</strong> Containerized and deployed using Docker & EC2</li>
+    </ul>
+
+    <h2>Education</h2>
+    <p>B.Tech in Computer Engineering – Govt. College of Engg, Yavatmal (2023)<br>CGPA: 8.42</p>
+
+    <footer>&copy; 2025 Pratik Pardeshi | All rights reserved</footer>
+  </div>
+</body>
+</html>
