@@ -1,136 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pratik Pardeshi | AWS DevOps Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratik Pardeshi | Portfolio</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #00e6e6;
+      --secondary: #ffdb58;
+      --dark: #121212;
+      --light: #f5f5f5;
+      --glass: rgba(255, 255, 255, 0.05);
+    }
+
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      line-height: 1.6;
-      padding: 40px;
+      color: var(--light);
     }
+
     .container {
-      max-width: 900px;
-      margin: auto;
-      background: #1c1c1c;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+      max-width: 960px;
+      margin: 60px auto;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+      animation: fadeIn 1.2s ease-in-out;
     }
-    h1, h2 {
-      color: #00e6e6;
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      color: var(--primary);
       margin-bottom: 10px;
     }
+
     h2 {
-      border-bottom: 2px solid #00e6e6;
-      padding-bottom: 5px;
+      color: var(--secondary);
+      font-size: 1.5rem;
       margin-top: 30px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 5px;
     }
+
+    p, li {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
     ul {
-      margin-left: 20px;
+      padding-left: 20px;
     }
-    .contact, .section {
-      margin-bottom: 20px;
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      margin: 5px 5px 5px 0;
+      background-color: var(--primary);
+      color: #000;
+      border-radius: 5px;
+      font-size: 0.9rem;
     }
-    .project {
-      margin-bottom: 10px;
-    }
-    .highlight {
-      color: #ffdb58;
-    }
+
     footer {
       text-align: center;
-      margin-top: 30px;
-      font-size: 0.9em;
+      font-size: 0.9rem;
       color: #ccc;
+      margin-top: 40px;
     }
-    .flash {
-      animation: flash 1s infinite alternate;
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes flash {
-      from { color: #00e6e6; }
-      to { color: #fff; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        margin: 30px 20px;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="flash">Pratik Pardeshi</h1>
-    <p><strong>AWS DevOps Engineer</strong></p>
-    <div class="contact">
-      <p><strong>Location:</strong> Raver, MH</p>
-      <p><strong>Email:</strong> pspardeshi2002@gmail.com</p>
-      <p><strong>Phone:</strong> +91 9763168031</p>
+    <h1>Pratik Pardeshi</h1>
+    <p style="text-align: center;"><strong>AWS DevOps Engineer</strong></p>
+
+    <h2>Contact</h2>
+    <p>Email: pspardeshi2002@gmail.com</p>
+    <p>Phone: +91 9763168031</p>
+    <p>Location: Raver, MH, India</p>
+
+    <h2>Skills</h2>
+    <div>
+      <span class="tag">AWS</span>
+      <span class="tag">EC2</span>
+      <span class="tag">Docker</span>
+      <span class="tag">Jenkins</span>
+      <span class="tag">Kubernetes</span>
+      <span class="tag">Terraform</span>
+      <span class="tag">Ansible</span>
+      <span class="tag">GitHub Actions</span>
     </div>
 
-    <div class="section">
-      <h2>Professional Summary</h2>
-      <p>Results-driven AWS DevOps Engineer with 2.3+ years of experience in cloud-based solutions using AWS. Proficient in CI/CD, IAC, and cloud security practices, with a strong focus on automation, scalability, and performance.</p>
-    </div>
+    <h2>Professional Summary</h2>
+    <p>
+      AWS DevOps Engineer with 2.3+ years of experience. Strong in automation,
+      CI/CD pipelines, and cloud infrastructure using AWS services. Experienced in
+      deploying and scaling apps using Docker, Jenkins, Kubernetes, and Terraform.
+    </p>
 
-    <div class="section">
-      <h2>Skills & Technologies</h2>
-      <ul>
-        <li><span class="highlight">Cloud:</span> AWS (EC2, S3, RDS, IAM, VPC, CloudFormation, Auto Scaling, ELB)</li>
-        <li><span class="highlight">DevOps:</span> Jenkins, Docker, Kubernetes, Ansible, Terraform</li>
-        <li><span class="highlight">CI/CD:</span> Git, Jenkins, AWS CodeDeploy, CodePipeline</li>
-        <li><span class="highlight">IaC:</span> Terraform, CloudFormation</li>
-        <li><span class="highlight">Monitoring:</span> CloudWatch</li>
-        <li><span class="highlight">Version Control:</span> Git, GitHub</li>
-      </ul>
-    </div>
+    <h2>Experience</h2>
+    <p><strong>Flynaut Saas Pvt Ltd</strong> – AWS Engineer (Dec 2024–Present)</p>
+    <ul>
+      <li>Configured and deployed scalable EC2 instances</li>
+      <li>Designed secure VPCs with subnets and security groups</li>
+      <li>Built CI/CD pipelines using Jenkins + CodeDeploy</li>
+    </ul>
+    <p><strong>Skillerio Pvt Ltd</strong> – AWS DevOps Engineer (Feb 2023–Dec 2024)</p>
+    <ul>
+      <li>Automated deployments with Jenkins pipelines</li>
+      <li>Managed RDS instances and monitoring with CloudWatch</li>
+      <li>Used Terraform and CloudFormation for IaC</li>
+    </ul>
 
-    <div class="section">
-      <h2>Professional Experience</h2>
-      <p><strong>AWS Engineer – Flynaut Saas Pvt Ltd (Dec 2024–Present)</strong></p>
-      <ul>
-        <li>Configured EC2 instances for Linux/Windows</li>
-        <li>Designed VPCs with subnets and security groups</li>
-        <li>Managed IAM roles and Auto Scaling groups</li>
-        <li>Built CI/CD pipelines using Jenkins and AWS services</li>
-      </ul>
-      <p><strong>AWS DevOps Engineer – Skillerio Pvt Ltd (Feb 2023–Dec 2024)</strong></p>
-      <ul>
-        <li>Configured CI/CD pipelines for automated deployment</li>
-        <li>Deployed RDS & CloudFormation stacks</li>
-        <li>Enforced AWS security best practices</li>
-      </ul>
-    </div>
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Three-Tier Architecture:</strong> EC2 + Load Balancer + RDS deployment</li>
+      <li><strong>Django App CI/CD:</strong> Automated build/deploy using Jenkins</li>
+      <li><strong>Java Pet Clinic:</strong> Containerized and deployed using Docker & EC2</li>
+    </ul>
 
-    <div class="section">
-      <h2>Projects</h2>
-      <div class="project">
-        <strong>Three-Tier Architecture (AWS):</strong>
-        <p>Deployed high-availability architecture using EC2, ELB, Auto Scaling, and S3.</p>
-      </div>
-      <div class="project">
-        <strong>Automated Django Notes App:</strong>
-        <p>Jenkins-based CI/CD deployment on EC2 with seamless updates.</p>
-      </div>
-      <div class="project">
-        <strong>Java Pet Clinic Deployment:</strong>
-        <p>Automated Jenkins deployment of Java app with monitoring.</p>
-      </div>
-    </div>
+    <h2>Education</h2>
+    <p>B.Tech in Computer Engineering – Govt. College of Engg, Yavatmal (2023)<br>CGPA: 8.42</p>
 
-    <div class="section">
-      <h2>Education</h2>
-      <p><strong>B.Tech in Computer Engineering</strong></p>
-      <p>Government College of Engineering, Yavatmal – CGPA: 8.42 (2023)</p>
-    </div>
-
-    <div class="section">
-      <h2>Languages</h2>
-      <p>English, Hindi, Marathi</p>
-    </div>
-
-    <footer>
-      &copy; 2025 Pratik Pardeshi | Built with 💻 HTML, CSS & JS
-    </footer>
+    <footer>&copy; 2025 Pratik Pardeshi | All rights reserved</footer>
   </div>
 </body>
 </html>
