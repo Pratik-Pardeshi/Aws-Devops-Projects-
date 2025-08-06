@@ -1,0 +1,84 @@
+ Step 1: Launch EC2 Instance
+OS: Ubuntu 22.04
+
+Type: t2.micro
+
+Security Group: Allow Port 22, 80
+
+🔹 Step 2: Connect & Install LAMP
+bash
+Copy code
+ssh -i your-key.pem ubuntu@your-ec2-ip
+Install Apache + PHP + MySQL client:
+
+bash
+Copy code
+sudo apt update
+sudo apt install apache2 php libapache2-mod-php php-mysql mysql-client -y
+Restart Apache:
+
+bash
+Copy code
+sudo systemctl restart apache2
+🔹 Step 3: Create an RDS MySQL Instance
+Go to AWS > RDS > Create Database
+
+Select MySQL, Free tier, t3.micro
+
+Set DB name: student_db, user: admin, password: yourpass
+
+Note endpoint, user, and password
+
+Security group must allow MySQL (port 3306) and access from EC2's security group.
+
+🔹 Step 4: Connect to RDS from EC2 (Test)
+bash
+Copy code
+mysql -h <rds-endpoint> -u admin -p
+🔹 Step 5: Create MySQL Table
+sql
+Copy code
+CREATE DATABASE student_db;
+USE student_db;
+CREATE TABLE students (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100)
+);
+INSERT INTO students (name, email) VALUES ('Pratik', 'pratik@gmail.com');
+🔹 Step 6: Write PHP Code to Fetch Data
+bash
+Copy code
+sudo nano /var/www/html/index.php
+Paste:
+
+php
+Copy code
+<?php
+$host = "your-rds-endpoint";
+$user = "admin";
+$pass = "yourpass";
+$dbname = "student_db";
+
+// Connect
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM students";
+$result = $conn->query($sql);
+
+echo "<h1>Student List</h1>";
+while($row = $result->fetch_assoc()) {
+    echo "Name: " . $row["name"]. " | Email: " . $row["email"]. "<br>";
+}
+
+$conn->close();
+?>
+🔹 Step 7: Visit in Browser
+Go to:
+📍 http://<your-ec2-public-ip>/index.php
+
+✅ You should see student names from RDS.
